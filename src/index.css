@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 3px);
+  --radius-md: calc(var(--radius) - 1px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-app-canvas: var(--app-canvas);
+  --color-online: var(--online);
+  --color-avatar-coral: var(--avatar-coral);
+  --color-avatar-lilac: var(--avatar-lilac);
+  --color-avatar-mint: var(--avatar-mint);
+  --color-avatar-sky: var(--avatar-sky);
+  --color-avatar-gold: var(--avatar-gold);
+  --color-avatar-foreground: var(--avatar-foreground);
+  --shadow-soft: var(--shadow-soft);
+  --shadow-subtle: var(--shadow-subtle);
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(0.995 0.002 70);
+  --foreground: oklch(0.205 0.012 35);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.205 0.012 35);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.205 0.012 35);
+  --primary: oklch(0.61 0.18 31);
+  --primary-hover: oklch(0.56 0.18 31);
+  --primary-soft: oklch(0.95 0.032 30);
+  --primary-foreground: oklch(0.995 0.002 70);
+  --secondary: oklch(0.958 0.006 70);
+  --secondary-hover: oklch(0.935 0.009 70);
+  --secondary-foreground: oklch(0.25 0.012 35);
+  --muted: oklch(0.968 0.004 70);
+  --muted-foreground: oklch(0.55 0.014 45);
+  --accent: oklch(0.95 0.032 30);
+  --accent-foreground: oklch(0.49 0.16 31);
+  --destructive: oklch(0.58 0.2 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.91 0.008 70);
+  --input: oklch(0.89 0.009 70);
+  --ring: oklch(0.61 0.18 31);
+  --app-canvas: oklch(0.965 0.006 70);
+  --online: oklch(0.69 0.16 151);
+  --avatar-coral: oklch(0.84 0.09 30);
+  --avatar-lilac: oklch(0.84 0.07 300);
+  --avatar-mint: oklch(0.87 0.07 155);
+  --avatar-sky: oklch(0.87 0.06 230);
+  --avatar-gold: oklch(0.88 0.09 83);
+  --avatar-foreground: oklch(0.28 0.025 35);
+  --shadow-soft: 0 18px 50px color-mix(in oklab, var(--foreground) 7%, transparent);
+  --shadow-subtle: 0 4px 14px color-mix(in oklab, var(--foreground) 5%, transparent);
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@utility animate-rise {
+  animation: rise 420ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { background: var(--color-background); }
+  body {
+    margin: 0;
+    min-width: 320px;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    letter-spacing: 0;
+    text-rendering: optimizeLegibility;
+  }
+  button, input { font: inherit; letter-spacing: 0; }
+  button { cursor: pointer; }
+  ::selection { background: var(--color-primary-soft); color: var(--color-foreground); }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Baat — Minimalist Chat Interface",
+  "description": "A private, focused space for conversations with the people who matter.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
